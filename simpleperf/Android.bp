@@ -336,8 +336,16 @@ cc_binary {
     static_libs: ["libsimpleperf"],
     target: {
         android: {
-            shared_libs: [
-                "libLLVM_android",
+    //FIXME: llvm workaround
+    //        shared_libs: [
+    //        ],
+            static_libs: [
+                "libLLVMObject",
+                "libLLVMBitReader",
+                "libLLVMMC",
+                "libLLVMMCParser",
+                "libLLVMCore",
+                "libLLVMSupport",
             ],
         },
     },
